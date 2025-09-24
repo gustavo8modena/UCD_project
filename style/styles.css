@@ -1,6 +1,212 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Imperial+Script&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Imperial+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face{
+    font-family: Sport;
+    src: url(../fonts/Sprintura\ Demo.otf);
+    font-weight: normal;
+}
+
+@font-face{
+    font-family: Legendary;
+    src: url(../fonts/Dragonlord.otf);
+    font-weight: 800;
+}
+
+@media (max-width: 600px) {
+    .logo {
+        height: 60px;
+    }
+    .header-text h1 {
+        font-size: 2.5em;
+    }
+    .header-text p {
+        font-size: 0.9em;
+    }
+}
+
+:root{
+    --cor0:#D6645D;
+    --cor1:#c92b2b;
+    --cor2:#310c0a;
+    --cor3:#DDBA80;
+    --cor4:#947248;
+
+    --default-font: Arial, Verdana, Helvetica, sans-serif;
+    --sport-font: "Sport", sans-serif;
+    --legendary-font: "Legendary", sans-serif;
+    --classic-font: "Playfair Display", serif;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
 
 body{
-    background-color: #DDBA80;
+    background-color: var(--cor4);
+    font-family: var(--default-font);
+}
+
+a.extern::after{
+    content: '\1F517';
+}
+
+header {
+    background-image: linear-gradient(to bottom, black, var(--cor2));
+    background-color: black;
+    font-family: var(--legendary-font);
+    padding: 20px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;       /* alinha verticalmente logo e texto */
+    justify-content: center;   /* centraliza o texto */
+    gap: 20px;                 /* espaço entre logo e texto */
+    flex-wrap: wrap;           /* garante responsividade */
+}
+
+.logo {
+    flex-shrink: 0;            /* logo não vai encolhe */
+    height: 100px;
+}
+
+.header-text {
+    text-align: center;
+}
+
+.header-text h1 {
+    color: var(--cor3);
+    margin: 0 0 10px 0;
+    font-size: 4em;
+}
+
+.header-text p {
+    color: var(--cor0);
+    font-family: var(--classic-font);
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 0 10px;
+}
+
+nav {
+    background-color: var(--cor2);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.358);
+    font-family: var(--default-font);
+    /* Novas propriedades para centralizar */
+    display: flex;
+    justify-content: center; /* centraliza horizontalmente */
+    gap: 10px; /* espaçamento entre os links */
+}
+
+nav > a {
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: .7s;
+}
+
+nav > a:hover{
+    background-color: var(--cor0);
+    color: black;
+}
+
+main{
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.422);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main h1{
+    font-family: var(--sport-font);
+}
+
+main h2{
+    font-family: var(--sport-font);
+    color: black;
+    font-size: 1.2em;
+    background-image: linear-gradient(to left, var(--cor0), transparent);
+}
+
+main p {
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 1em;
+    line-height: 2em;
+}
+
+main strong{
+    color: var(--cor1);
+    font-weight: bold;
+   
+}
+
+main a{
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor2);
+    
+}
+
+main a:hover{
+    text-decoration: underline;
+    color: var(--cor0);
+}
+
+main img{
+    width: 100%;
+
+}
+
+div.video {
+    background-color: var(--cor2);
+    margin: 30px auto;
+    position: relative;
+    padding-bottom: 42.85%;
+    height: 0;
+    max-width: 800px;
+    border: 5px solid var(--cor4);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+div.video iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border: 0;
+}
+
+footer{
+    background-color: var(--cor2);
+    color: var(--cor3);
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+footer a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor0);
 }
